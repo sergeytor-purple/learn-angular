@@ -1,10 +1,10 @@
 <div>Hello</div>
 
-<p>{{ title }}</p>
+<!-- <p>{{ title }}</p>
 <p>{{ number - 2 }}</p>
 <p>{{ arr }}</p>
 
-<button (click)="onClick()">Click me</button>
+<button (click)="onClick()">Click me</button> -->
 
 <!-- <input
   type="text"
@@ -18,12 +18,12 @@
 </p> -->
 
 <!-- <input type="text" [value]="title" (input)="onInput($event)" /> -->
-<input type="text" [(ngModel)]="title" />
+<!-- <input type="text" [(ngModel)]="title" />
 <p>{{ title }}</p>
 
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="backgroundToggle = !backgroundToggle">Toggle</button> -->
 
-<div
+<!-- <div
   [ngStyle]="{
     width: '200px',
     height: '200px',
@@ -31,7 +31,61 @@
     border: '1px solid #ccc',
     background: backgroundToggle ? 'red' : 'blue'
   }"
-></div>
+></div> -->
+
+<!-- <p
+  [ngClass]="{
+    red: backgroundToggle,
+    blue: !backgroundToggle
+  }"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, repellendus?
+</p> -->
+
+<!-- <p [class.blue]="backgroundToggle" [class.red]="!backgroundToggle">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, temporibus.
+</p> -->
+
+<!-- <button (click)="toggle = !toggle">Toggle</button> -->
+
+<!-- <p *ngIf="toggle; else blueP" class="red">
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni earum placeat
+  tempora soluta perspiciatis sequi velit officiis aliquam odit.
+</p>
+<ng-template #blueP>
+  <p class="blue">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni earum
+    placeat tempora soluta perspiciatis sequi velit officiis aliquam odit.
+  </p>
+</ng-template> -->
+
+<!-- <div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true" class="red">Lorem, ipsum.</p>
+  <p *ngSwitchCase="false" class="blue">Lorem, ipsum.</p>
+  <p *ngSwitchDefault>Lorem</p>
+</div> -->
+
+<!-- <ul>
+  <li *ngFor="let number of arr; let idx = index">
+    {{ idx + 1 }}<strong>{{ number }}</strong>
+  </li>
+</ul> -->
+
+<ul style="list-style: none">
+  <li *ngFor="let post of objs">
+    <p>
+      {{ post.title }} <b>{{ post.author }}</b>
+    </p>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        <div>
+          <small>{{ comment.name }}</small>
+          <p>{{ comment.text }}</p>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <app-post></app-post>
 
