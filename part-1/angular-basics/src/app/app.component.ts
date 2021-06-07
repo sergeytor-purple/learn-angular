@@ -12,28 +12,30 @@ export class AppComponent {
   // constructor() {}
   // title = 'initial';
   // toggle = true;
+  // arr = [1, 1, 2, 3, 5, 8, 13];
+  // objs = [
+  //   {
+  //     title: 'Post1',
+  //     author: 'Sergey',
+  //     comments: [
+  //       { name: 'max', text: 'lorem1' },
+  //       { name: 'max', text: 'lorem1' },
+  //       { name: 'max', text: 'lorem1' },
+  //     ],
+  //   },
+  //   {
+  //     title: 'Post2',
+  //     author: 'Sergey',
+  //     comments: [
+  //       { name: 'max3', text: 'lorem1' },
+  //       { name: 'max3', text: 'lorem1' },
+  //       { name: 'max3', text: 'lorem1' },
+  //     ],
+  //   },
+  // ];
 
-  arr = [1, 1, 2, 3, 5, 8, 13];
-  objs = [
-    {
-      title: 'Post1',
-      author: 'Sergey',
-      comments: [
-        { name: 'max', text: 'lorem1' },
-        { name: 'max', text: 'lorem1' },
-        { name: 'max', text: 'lorem1' },
-      ],
-    },
-    {
-      title: 'Post2',
-      author: 'Sergey',
-      comments: [
-        { name: 'max3', text: 'lorem1' },
-        { name: 'max3', text: 'lorem1' },
-        { name: 'max3', text: 'lorem1' },
-      ],
-    },
-  ];
+  now: Date = new Date();
+
   // onInput(event?: KeyboardEvent) {
   //   if (event) this.inputValue = (<HTMLInputElement>event.target).value;
   // }

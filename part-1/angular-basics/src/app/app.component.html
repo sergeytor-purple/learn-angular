@@ -71,7 +71,7 @@
   </li>
 </ul> -->
 
-<ul style="list-style: none">
+<!-- <ul style="list-style: none">
   <li *ngFor="let post of objs">
     <p>
       {{ post.title }} <b>{{ post.author }}</b>
@@ -85,7 +85,11 @@
       </li>
     </ul>
   </li>
-</ul>
+</ul> -->
+
+<p>
+  {{ now | date: "long" | uppercase }}
+</p>
 
 <app-post></app-post>
 
