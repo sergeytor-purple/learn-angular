@@ -17,11 +17,11 @@ export class AppComponent implements OnInit {
       text: 'lorem',
       id: 1,
     },
-    // {
-    //   title: 'Learn Angular2',
-    //   text: 'lorem2',
-    //   id: 2,
-    // },
+    {
+      title: 'Learn Angular2',
+      text: 'lorem2',
+      id: 2,
+    },
   ];
 
   ngOnInit(): void {
