@@ -1,0 +1,25 @@
+<div>
+  <h1>Services</h1>
+  component
+
+  <app-counter></app-counter>
+
+  <hr />
+
+  <div>
+    <h2>App Counter: {{ appCounterService.counter }}</h2>
+
+    <button (click)="appCounterService.increase()">+</button>
+    <button (click)="appCounterService.decrease()">-</button>
+  </div>
+
+  <hr />
+  local
+
+  <div>
+    <h2>App Counter: {{ localCounterService.counter }}</h2>
+
+    <button (click)="localCounterService.increase()">+</button>
+    <button (click)="localCounterService.decrease()">-</button>
+  </div>
+</div>
