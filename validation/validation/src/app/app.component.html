@@ -16,6 +16,12 @@
         <small *ngIf="form.get('email')?.errors?.email"
           >Type current email</small
         >
+        <small *ngIf="form.get('email')?.errors?.restrictedEmail"
+          >Email {{ form.get("email").value }} rejected</small
+        >
+        <small *ngIf="form.get('email')?.errors?.uniqEmail"
+          >Email {{ form.get("email").value }} booked
+        </small>
       </div>
     </div>
 
@@ -54,19 +60,26 @@
         <input type="text" formControlName="city" placeholder="City" />
       </div>
 
-      <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button>
+      <button class="btn" type="button" (click)="setCapital()">
+        Выбрать столицу
+      </button>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="skills">
       <h2>Ваши навыки</h2>
-      <button class="btn" type="button">Добавить умение</button>
-      <div class="form-control">
-        <label></label>
-        <input type="text" />
+      <button class="btn" type="button" (click)="addSkill()">
+        Добавить умение
+      </button>
+      <div
+        class="form-control"
+        *ngFor="let control of form.get('skills')?.controls; let idx = index"
+      >
+        <label>Slills {{ idx + 1 }}</label>
+        <input type="text" [formControlName]="idx" />
       </div>
     </div>
 
-    <button class="btn" type="submit" [disabled]="form.invalid">
+    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">
       Отправить
     </button>
   </form>

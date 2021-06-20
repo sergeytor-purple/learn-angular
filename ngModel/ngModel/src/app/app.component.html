@@ -1,0 +1,9 @@
+<div>
+  <p>switch</p>
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handleChange()"
+  ></app-switch>
+  <hr />
+  <p>{{ appState }}</p>
+</div>
