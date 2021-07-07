@@ -1,6 +1,12 @@
 import { PostsComponent } from "./posts.component";
 import { PostsService } from "./posts.service";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import {
+  ComponentFixture,
+  TestBed,
+  async,
+  fakeAsync,
+  tick,
+} from "@angular/core/testing";
 import { HttpClientModule } from "@angular/common/http";
 import { of } from "rxjs";
 
@@ -22,12 +28,18 @@ describe("PostsComponent", () => {
     service = TestBed.get(PostsService);
   });
 
-  it("should fetch posts on ngOnInit", () => {
+  it("should fetch posts on ngOnInit (promise)", fakeAsync(() => {
     const posts = [1, 2, 3];
-    spyOn(service, "fetch").and.returnValue(of(posts));
+    spyOn(service, "fetchPromise").and.returnValue(Promise.resolve(posts));
 
     fixture.detectChanges();
 
-    expect(component.posts).toEqual(posts);
-  });
+    tick();
+
+    expect(component.posts.length).toBe(posts.length);
+
+    // fixture.whenStable().then(() => {
+    //   expect(component.posts.length).toBe(posts.length);
+    // });
+  }));
 });
